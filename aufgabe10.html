@@ -1,0 +1,100 @@
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<title>Eisdealer</title>
+<link rel="stylesheet" href="aufgabe10.css" type="text/css" media="screen" />
+<script src="aufgabe10.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>
+
+	<header>
+		<div>
+			<h1>Ice Cream Shop </h1>
+		</div>
+	</header>
+
+	<main>
+    
+    <fieldset id="Bestellung">
+			<legend> Ihre Bestellung </legend>
+			<p class= "text">Gewählte Eissorten:</p>
+			<p id="Eissortenwahl"></p>
+			<p class="text">Gewählte Toppings:</p>
+			<p id="Toppingwahl"></p>
+			<p class="text">Gewählte Behälter:</p>
+			<p id="Behaelterwahl"></p>
+			<h2>Gesamtsumme:</h2>
+			<p id="Summe"></p>
+			<button name="button" type="button" id="Button">Bestellung abschicken</button>
+		</fieldset>
+	
+	
+	
+	
+	<p class="titel">1. Welche Eissorte(n) möchten Sie bestellen?</p>
+		<fieldset id="Eissorten">   
+			<legend class="titelkasten"> Unsere Eissorten – je 1€ </legend>
+		</fieldset>
+		
+	<p class="titel">2. Welche(s) Topping(s) möchten Sie dazu?</p>
+	    <fieldset id="Toppings">  
+			<legend class="titelkasten"> Unsere Toppings – je 0.50€ </legend>
+		</fieldset>	
+		
+	<p class="titel"> 3. Wählen Sie einen Behälter </p>	
+		<fieldset id="Behaelter">  
+			<legend class="titelkasten"> Behälter</legend>
+		</fieldset>
+		
+		
+	<p class="titel"> 4. Wählen Sie eine Lieferoption </p>	
+		<select name="Lieferung" id="Lieferoption">
+			<option value="option1" selected>Standardversand</option>
+			<option value="option2">Express Lieferung</option>
+			<option value="option3">Selbstabholung</option>
+			<option value="option4">3 Tage Versand</option>
+		</select>
+			
+		
+    <p class="titel">5. Bitte machen Sie für den Versand noch folgende Angaben:</p>
+	<fieldset id="Kundendaten">
+	
+		<legend class="titelkasten">Ihre Daten</legend>
+		Anrede
+		<select name="Anrede" id="Anrede">
+			<option value="Herr" selected>Herr</option>
+			<option value="Frau">Frau</option>
+		</select>
+		
+		Name			
+		<input required id="Nachname" class="textfelder" type="text" name="Name" placeholder="Name"/>
+		
+		Vorname
+		<input  required id="Vorname" class="textfelder" type="text" name="Vorname" placeholder="Vorname"/>
+	
+		Mail
+		<input  required id="Mail" class="textfelder" type="email" name="Mail" placeholder="place @ between"/>
+		
+		Telefon
+		<input  required id="Telefon" class="textfelder" type="text" name="Telefon" placeholder="Telefon"/>
+		
+		Straße
+		<input  required id="Strasse" class="textfelder" type="text" name="Straße" placeholder="Straße und Hausnummer"/>
+	
+		Posteitzahl
+		<input  required id="PLZ" class="textfelder" type="text" name="Postleitzahl" placeholder="Postleitzahl"/>
+		
+	    Ort
+		<input  required id="Ort" class="textfelder" type="text" name="Ort" placeholder="Ort"/>
+		
+		Land
+		<input  required id="Land" class="textfelder" type="text" name="Land" placeholder="Land"/>
+		
+	    <textarea name="Area" cols="33" rows="4" placeholder="Kommentar"></textarea>
+	</fieldset>
+
+	</main>
+</body>
+</html>
