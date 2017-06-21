@@ -20,22 +20,23 @@ function handleRequest(_request, _response) {
     let key;
     for (key in query)
         console.log(key + ":" + query[key]);
-    _response.setHeader("Access-Control-Allow-Origin", "*");
-    _response.setHeader("content-type", "text/html; charset=utf-8");
-    _response.write("Hallo!" + query["Vorname"] + "\n" + "Vielen Dank f�r Ihre Bestellung! Folgendes wird f�r zusammengestellt:");
-    _response.write("Vanille: " + query["Vanille"] + "\n");
-    _response.write("Schokolade: " + query["Schokolade"] + "\n");
-    _response.write("Erdbeere: " + query["Erdbeere"] + "\n");
-    _response.write("Cookies: " + query["Cookies"] + "\n");
-    _response.write("Mango: " + query["Mango"] + "\n");
-    _response.write("Himbeere: " + query["Himbeere"] + "\n");
-    _response.write("Haselnuss: " + query["Haselnuss"] + "\n");
-    _response.write("Straciatella: " + query["Straciatella"] + "\n");
-    _response.write("Nougat: " + query["Nougat"] + "\n");
-    _response.write("Kirsche: " + query["Kirsche"] + "\n");
-    _response.write("Joghurt: " + query["Joghurt"] + "\n");
-    _response.write("Beh�lter: " + query["Behaelter"] + "\n");
-    _response.write("Ihre Bestellung wird geliefert an: " + query["Vorname"] + "\n" + query["Nachname"] + "\n" + query["Ort"]);
+    //    _response.setHeader("Access-Control-Allow-Origin", "*");
+    //    _response.setHeader("content-type", "text/html; charset=utf-8");
+    _response.write("Hallo!" + query["Vorname"] + "<br>" + "Vielen Dank fuer Ihre Bestellung! Folgendes wird fuer Sie zusammengestellt:");
+    _response.write("Vanille: " + query["Vanille"] + "<br>");
+    _response.write("Schokolade: " + query["Schokolade"] + "<br>");
+    _response.write("Erdbeere: " + query["Erdbeere"] + "<br>");
+    _response.write("Cookies: " + query["Cookies"] + "<br>");
+    _response.write("Mango: " + query["Mango"] + "<br>");
+    _response.write("Himbeere: " + query["Himbeere"] + "<br>");
+    _response.write("Haselnuss: " + query["Haselnuss"] + "<br>");
+    _response.write("Straciatella: " + query["Straciatella"] + "<br>");
+    _response.write("Nougat: " + query["Nougat"] + "<br>");
+    _response.write("Kirsche: " + query["Kirsche"] + "<br>");
+    _response.write("Joghurt: " + query["Joghurt"] + "<br>");
+    _response.write("Toppings: " + query["Topping"] + "<br>");
+    _response.write("Behaelter: " + query["Behaelter"] + "<br>");
+    _response.write("Ihre Bestellung wird geliefert an: " + query["Vorname"] + "<br>" + query["Nachname"] + "<br>" + query["Ort"]);
     for (key in query) {
         _response.write(key + ":" + query[key]);
     }
