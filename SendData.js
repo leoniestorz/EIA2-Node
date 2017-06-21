@@ -6,22 +6,22 @@ var SendData;
         setupColorDivs();
     }
     function setupColorDivs() {
-        var colors = ["red", "green", "blue"];
-        var divs = document.getElementsByTagName("div");
-        for (var i = 0; i < divs.length; i++) {
+        let colors = ["red", "green", "blue"];
+        let divs = document.getElementsByTagName("div");
+        for (let i = 0; i < divs.length; i++) {
             divs[i].style.backgroundColor = colors[i];
             divs[i].addEventListener("click", handleClickOnDiv);
         }
     }
     function handleClickOnDiv(_event) {
-        var style = _event.target.style;
+        let style = _event.target.style;
         console.log(style.backgroundColor);
         sendRequest(style.backgroundColor);
     }
     function sendRequest(_color) {
-        var xhr = new XMLHttpRequest();
-        xhr.open("GET", "http://localhost:8100?color=" + _color, true);
-        //xhr.open("GET", "https://eia2-servertest.herokuapp.com?color=" + _color, true);
+        let xhr = new XMLHttpRequest();
+        //        xhr.open("GET", "http://localhost:8100?color=" + _color, true);
+        xhr.open("GET", "https://heroku-eia2.herokuapp.com?color=" + _color, true);
         xhr.addEventListener("readystatechange", handleStateChange);
         xhr.send();
     }
