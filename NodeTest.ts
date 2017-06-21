@@ -49,7 +49,9 @@ function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerRes
     
     _response.write("<br" + "Toppings: " + query["Topping"] + "<br>");
     _response.write("<br>" + "Behaelter: " + query["Behaelter"] + "<br>");
-    _response.write("<br>" + "Ihre Bestellung wird geliefert an:" + "<br>" + query["Vorname"] + "<br>" + query["Nachname"] + "<br>" + query["Ort"]);
+    _response.write("<br>" + "Art der Lieferung: " + query["Lieferung"] + "<br>");
+    
+    _response.write("<br>" + "Ihre Bestellung wird geliefert an:" + "<br>" + "<br>" + query["Vorname"] + "<br>" + query["Nachname"] + "<br>" + query["Ort"]);
     
     for (key in query){
        _response.write(key + ":" + query[key]);
