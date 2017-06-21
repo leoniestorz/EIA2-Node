@@ -1,6 +1,6 @@
 {
 	"name" : "Aufgabe10",
-	"version" : "0.0.0",
+	"version" : "0.0.1",
 	"description" : "enter a description of the project here",
 	"author" : "Leonie Storz",
 	"main" : "NodeTest.js",
@@ -8,7 +8,7 @@
 		"start" : "node NodeTest.js"
 	},
 	"engines" : {
-		"node" : "5.8.0"
+		"node" : "7.5.0"
 	},
 	"dependencies" : {
 	}
