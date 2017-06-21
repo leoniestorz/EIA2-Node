@@ -32,7 +32,8 @@ function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerRes
 
     _response.setHeader("Access-Control-Allow-Origin", "*");
     _response.setHeader("content-type", "text/html; charset=utf-8");
-    _response.write("Hallo!" + query["Vorname"] + "<br>" +  "Vielen Dank fuer Ihre Bestellung! Folgendes wird fuer Sie zusammengestellt:"); 
+    
+    _response.write("Hallo!" + query["Vorname"] + "<br>" + "<br>" +  "Vielen Dank fuer Ihre Bestellung! Folgendes wird fuer Sie zusammengestellt:" + "<br>" + "<br>"); 
    
     _response.write("Vanille: " + query["Vanille"] + "<br>");
     _response.write("Schokolade: " + query["Schokolade"] + "<br>");
@@ -46,9 +47,9 @@ function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerRes
     _response.write("Kirsche: " + query["Kirsche"] + "<br>");
     _response.write("Joghurt: " + query["Joghurt"] + "<br>");
     
-    _response.write("Toppings: " + query["Topping"] + "<br>");
-    _response.write("Behaelter: " + query["Behaelter"] + "<br>");
-    _response.write("Ihre Bestellung wird geliefert an: " + query["Vorname"] + "<br>" + query["Nachname"] + "<br>" + query["Ort"]);
+    _response.write("<br" + "Toppings: " + query["Topping"] + "<br>");
+    _response.write("<br>" + "Behaelter: " + query["Behaelter"] + "<br>");
+    _response.write("<br>" + "Ihre Bestellung wird geliefert an:" + "<br>" + query["Vorname"] + "<br>" + query["Nachname"] + "<br>" + query["Ort"]);
     
     for (key in query){
        _response.write(key + ":" + query[key]);
