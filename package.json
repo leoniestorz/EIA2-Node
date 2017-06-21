@@ -3,9 +3,9 @@
 	"version" : "0.0.1",
 	"description" : "enter a description of the project here",
 	"author" : "Leonie Storz",
-	"main" : "aufgabe10.js",
+	"main" : "NodeTest.js",
 	"scripts" : {
-		"start" : "node aufgabe10.js"
+		"start" : "node NodeTest.js"
 	},
 	"engines" : {
 		"node" : "7.5.0"
