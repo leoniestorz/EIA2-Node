@@ -24,16 +24,19 @@ function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerRes
     console.log("Request received");
 
     console.log(_request.url);
+    
+    _response.setHeader("Access-Control-Allow-Origin", "*");
+    _response.setHeader("content-type", "text/html; charset=utf-8");
+    
     let query: AssocStringString = Url.parse(_request.url, true).query;
     console.log(query);
     let key: string;
     for (key in query)
         console.log(key + ":" + query[key]);
 
-    _response.setHeader("Access-Control-Allow-Origin", "*");
-    _response.setHeader("content-type", "text/html; charset=utf-8");
     
-    _response.write("Hallo!" + query["Vorname"] + "<br>" + "<br>" +  "Vielen Dank fuer Ihre Bestellung! Folgendes wird fuer Sie zusammengestellt:" + "<br>" + "<br>"); 
+    
+    _response.write("Hallo" + " " + query["Vorname"] + "!" + " Vielen Dank fuer Ihre Bestellung! Folgendes wird fuer Sie zusammengestellt:" + "<br>" + "<br>"); 
    
     _response.write("Vanille: " + query["Vanille"] + "<br>");
     _response.write("Schokolade: " + query["Schokolade"] + "<br>");
@@ -47,14 +50,31 @@ function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerRes
     _response.write("Kirsche: " + query["Kirsche"] + "<br>");
     _response.write("Joghurt: " + query["Joghurt"] + "<br>");
     
-    _response.write("Toppings: " + query["Toppings"] + "<br>");
-    _response.write("Behaelter: " + query["Behaelter"] + "<br>");
+    _response.write("<br>" + "Ihre Toppingwahl: " + "<br>");
+    
+    if(query["Sahne"] != undefined)
+    _response.write("Sahne" + "<br>");
+    if(query["Schokostreusel"] != undefined)
+    _response.write("Schokostreusel" + "<br>");
+    if(query["Bunte Streusel"] != undefined)
+    _response.write("Bunte Streusel" + "<br>");
+    if(query["Kokosraspeln"] != undefined)
+    _response.write("Kokosraspeln" + "<br>");
+    if(query["Erdbeersosse"] != undefined)
+    _response.write("Erdbeersosse" + "<br>");
+    if(query["Schokososse"] != undefined)
+    _response.write("Schokososse" + "<br>");
+    
+    
+    _response.write("<br>" + "Behaelter: " + query["behaelter"] + "<br>");
+    
     _response.write("Art der Lieferung: " + query["Lieferung"] + "<br>");
     
-    _response.write("<br>" + "Ihre Bestellung wird geliefert an:" + "<br>" + "<br>" + query["Vorname"] + "<br>" + query["Nachname"] + "<br>" + query["Ort"]);
+    _response.write("<br>" + "Ihre Bestellung wird geliefert an:" + "<br>" + query["Vorname"] + " " +  query["Nachname"] + "<br>" + query["Strasse"] + "<br>" + query["Postleitzahl"] + " " + query["Ort"] + "<br>" + query["Land"] + "<br>");
+    _response.write("<br>" + "Ihre Kontaktdaten:" + "<br>" + "Telefon: " + query["Telefon"] + "<br>" + "Mail: " + query["Mail"]); 
     
-    for (key in query){
-       _response.write(key + ":" + query[key]);
-   }
+//    for (key in query){
+//       _response.write(key + ":" + query[key] + "<br>");
+//   }
     _response.end();
 }
