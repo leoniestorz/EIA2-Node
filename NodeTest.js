@@ -1,3 +1,11 @@
+//Aufgabe: 10 - ClientServer
+//Name: Leonie Storz
+//Matrikel: 255077
+//Datum: 22.06.17
+//    
+//Hiermit versichere ich, dass ich diesen Code selbst, 
+//sowie in Zusammenarbeit mit Jonathan Lingnau erstellt habe. 
+//Er wurde nicht kopiert und auch nicht diktiert.
 "use strict";
 console.log("Server starting");
 const Http = require("http");
